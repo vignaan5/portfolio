@@ -148,7 +148,7 @@ export const Navbar = () => {
         data-navbar-item
         className={styles.logo}
         aria-label={`${config.name}, ${config.role}`}
-        onClick={handleMobileNavClick}
+        onClick={handleMobileNavClick}      
       >
         <Monogram highlight />
       </RouterLink>

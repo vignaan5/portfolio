@@ -111,7 +111,7 @@ export const SmartSparrow = () => {
         <ProjectHeader
           title={title}
           description={description}
-          url="https://www.smartsparrow.com/"
+          url="https://hub.docker.com/r/vignaan5/abcgeotracking"
           roles={roles}
         />
         <ProjectSection padding="top">

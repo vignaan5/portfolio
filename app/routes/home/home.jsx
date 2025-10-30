@@ -104,7 +104,7 @@ export const Home = () => {
         visible={visibleSections.includes(projectOne.current)}
         index={1}
         title="Designing live geotracking system"
-        description="Designing a java spring micorservice using apache kafka and google s3 library /n Docker image: sudo docker pull"
+        description="Designing a java spring micorservice using apache kafka and google s3 library to stream continous data of live geo grid in the form of HTTP rest api such that it can be called from mobile applications"
         buttonText="View project"
         buttonLink="/projects/smart-sparrow"
         model={{

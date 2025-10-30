@@ -16,23 +16,30 @@ import katakana from './katakana.svg';
 import styles from './profile.module.css';
 
 const ProfileText = ({ visible, titleId }) => (
-  <Fragment>
-    <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
-      <DecoderText text="Hi there" start={visible} delay={500} />
-    </Heading>
-    <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I’m Vignaan, currently I live in Hydearbad working as a software developer at{' '}
-      <Link href="https://www.qwilr.com">Qwilr</Link>. My projects include UX design, UI
-      animations, and icon illustration. Being comfortable with code allows me to rapidly
-      prototype and validate experiences. If you’re interested in the tools and software I
-      use check out my <Link href="/uses">uses page</Link>.
-    </Text>
-    <Text className={styles.description} data-visible={visible} size="l" as="p">
-      In my spare time I like to practice Brazilian Jiu Jitsu, play video games, and{' '}
-      <Link href="/projects/volkihar-knight">make mods</Link>. I’m always down for hearing
-      about new projects, so feel free to drop me a line.
-    </Text>
-  </Fragment>
+<Fragment>
+  <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
+    <DecoderText text="Hi there" start={visible} delay={500} />
+  </Heading>
+  <Text className={styles.description} data-visible={visible} size="l" as="p">
+    I’m a software developer based in Hyderabad with experience spanning backend systems, frontend development, and design systems. I focus on creating scalable, efficient, and user-friendly software. Continuous learning and crafting quality solutions define my approach.
+  </Text>
+  <Text className={styles.description} data-visible={visible} size="l" as="p">
+    My proficiencies include modern programming languages, responsive UI frameworks, RESTful APIs, and event-driven architectures. I embrace open source and collaborative development to build maintainable products.
+  </Text>
+  <Text className={styles.description} data-visible={visible} size="l" as="p">
+    In my free time,<b> I enjoy watching movies, playing cricket, and video games. I have a strong interest in building games myself, though I haven’t yet had the opportunity to pursue this fully—an ambition I am eager to explore when possible.</b>
+  </Text>
+  <Text className={styles.description} data-visible={visible} size="l" as="p">
+    Feel free to connect with me on{' '}
+    <Link href="https://www.linkedin.com/in/vignaan-chintapalli-b190aa218/" target="_blank" rel="noopener noreferrer">
+      LinkedIn
+    </Link>{' '}
+    for professional discussions or collaborations.
+  </Text>
+</Fragment>
+
+
+
 );
 
 export const Profile = ({ id, visible, sectionRef }) => {
