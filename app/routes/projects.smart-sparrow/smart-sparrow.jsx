@@ -4,27 +4,27 @@ import imageSprBackgroundVolcanismLarge from '~/assets/spr-background-volcanism-
 import imageSprBackgroundVolcanismPlaceholder from '~/assets/spr-background-volcanism-placeholder.jpg';
 import imageSprBackgroundVolcanism from '~/assets/spr-background-volcanism.jpg';
 import backgroundSpr from '~/assets/spr-background.jpg';
-import imageSprComponentsDarkLarge from '~/assets/spr-components-dark-large.png';
+import imageSprComponentsDarkLarge from '~/assets/geotrackingtest.png';
 import imageSprComponentsDarkPlaceholder from '~/assets/spr-components-dark-placeholder.png';
-import imageSprComponentsDark from '~/assets/spr-components-dark.png';
-import imageSprComponentsLightLarge from '~/assets/spr-components-light-large.png';
+import imageSprComponentsDark from '~/assets/geotrackingtest.png';
+import imageSprComponentsLightLarge from '~/assets/geotrackingtest.png';
 import imageSprComponentsLightPlaceholder from '~/assets/spr-components-light-placeholder.png';
-import imageSprComponentsLight from '~/assets/spr-components-light.png';
+import imageSprComponentsLight from '~/assets/geotrackingtest.png';
 import imageSprDesignSystemDarkLarge from '~/assets/spr-design-system-dark-large.png';
 import imageSprDesignSystemDarkPlaceholder from '~/assets/spr-design-system-dark-placeholder.png';
 import imageSprDesignSystemDark from '~/assets/spr-design-system-dark.png';
 import imageSprDesignSystemLightLarge from '~/assets/spr-design-system-light-large.png';
 import imageSprDesignSystemLightPlaceholder from '~/assets/spr-design-system-light-placeholder.png';
 import imageSprDesignSystemLight from '~/assets/spr-design-system-light.png';
-import imageSprLessonBuilderDarkLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
+import imageSprLessonBuilderDarkLarge from '~/assets/vignaan5dockerhub.png';
 import imageSprLessonBuilderDarkPlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
-import imageSprLessonBuilderDark from '~/assets/spr-lesson-builder-dark.jpg';
-import imageSprLessonBuilderLightLarge from '~/assets/spr-lesson-builder-light-large.jpg';
+import imageSprLessonBuilderDark from '~/assets/vignaan5dockerhub.png';
+import imageSprLessonBuilderLightLarge from '~/assets/vignaan5dockerhub.png';
 import imageSprLessonBuilderLightPlaceholder from '~/assets/spr-lesson-builder-light-placeholder.jpg';
-import imageSprLessonBuilderLight from '~/assets/spr-lesson-builder-light.jpg';
-import videoSprMotionLarge from '~/assets/spr-motion-large.mp4';
+import imageSprLessonBuilderLight from '~/assets/vignaan5dockerhub.png';
+import videoSprMotionLarge from '~/assets/kafka-geo-live-track.mp4';
 import videoSprMotionPlaceholder from '~/assets/spr-motion-placeholder.jpg';
-import videoSprMotion from '~/assets/spr-motion.mp4';
+import videoSprMotion from '~/assets/kafka-geo-live-track.mp4';
 import imageSprSchema1DarkLarge from '~/assets/spr-schema-1-dark-large.png';
 import imageSprSchema1DarkPlaceholder from '~/assets/spr-schema-1-dark-placeholder.png';
 import imageSprSchema1Dark from '~/assets/spr-schema-1-dark.png';
@@ -65,33 +65,39 @@ import { Suspense, lazy, useMemo } from 'react';
 import { media } from '~/utils/style';
 import styles from './smart-sparrow.module.css';
 
+
 const Earth = lazy(() => import('./earth').then(module => ({ default: module.Earth })));
 const EarthSection = lazy(() =>
   import('./earth').then(module => ({ default: module.EarthSection }))
 );
 
-const title = 'Designing the future of education';
+
+const title = 'Real-Time Geo Tracking with Interactive Grid';
 const description =
-  'I worked as the design lead on a major iteration of Smart Sparrow’s product. We took the platform in a bold new direction, focusing on becoming the best tool for learning designers.';
+  'Built a scalable microservice using Kafka and Spring Boot for live location tracking. S3 cells create an interactive grid where users can produce and consume location updates within 1.5km radius cells via REST API.';
 const roles = [
-  'Art Direction',
-  'UX and UI Design',
-  'Front End Development',
-  'Motion Design',
+  'System Architecture',
+  'Backend Development',
+  'Kafka Integration',
+  'REST API Design',
 ];
+
 
 export const meta = () => {
   return baseMeta({ title, description, prefix: 'Projects' });
 };
+
 
 export const SmartSparrow = () => {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === 'dark';
   const themes = ['dark', 'light'];
 
+
   const handleThemeChange = index => {
     toggleTheme(themes[index]);
   };
+
 
   return (
     <>
@@ -126,7 +132,7 @@ export const SmartSparrow = () => {
                   : imageSprLessonBuilderLightPlaceholder
               }
               sizes={`(max-width: ${media.mobile}px) 100vw, (max-width: ${media.tablet}px) 800px, 1000px`}
-              alt="The aero lesson builder app dragging an audio component into a screen about plant cells."
+              alt="Docker container running the geo tracking microservice with live location updates"
             />
           </ProjectSectionContent>
         </ProjectSection>
@@ -134,13 +140,7 @@ export const SmartSparrow = () => {
           <ProjectTextRow>
             <ProjectSectionHeading>The problem</ProjectSectionHeading>
             <ProjectSectionText>
-              In 2017, Smart Sparrow began a project to build an entirely new platform to
-              from the ground up to serve as the most powerful tool for educators to
-              create online learning experiences. The old platform was built in Flash, and
-              there were a number of user experience problems to solve in the process of
-              moving the platform to Javascript. The primary goals for the project were
-              reducing barriers to collaboration, and making the platform both easier for
-              new users, but with plenty of room to scale for advanced users.
+              Real-time location tracking at scale requires efficient data distribution and query mechanisms. Traditional approaches struggle with high-frequency updates and localized queries. The challenge was to create a system where location updates are organized geographically, allowing instant discovery of who is nearby within specific regions, all accessible through simple REST APIs from any device.
             </ProjectSectionText>
           </ProjectTextRow>
         </ProjectSection>
@@ -154,13 +154,13 @@ export const SmartSparrow = () => {
                   : `${imageSprComponentsLight} 1024w, ${imageSprComponentsLightLarge} 2048w`
               }
               width={1024}
-              hright={800}
+              height={800}
               placeholder={
                 isDark
                   ? imageSprComponentsDarkPlaceholder
                   : imageSprComponentsLightPlaceholder
               }
-              alt={`A set of ${theme} themed components for the aero design system`}
+              alt={`Live geo tracking grid showing real-time driver locations in ${theme} theme`}
               sizes="100vw"
             />
             <ProjectTextRow>
@@ -173,20 +173,16 @@ export const SmartSparrow = () => {
               </SegmentedControl>
             </ProjectTextRow>
             <ProjectTextRow>
-              <ProjectSectionHeading>The aero design system</ProjectSectionHeading>
+              <ProjectSectionHeading>The S3 cell-based architecture</ProjectSectionHeading>
               <ProjectSectionText>
-                To streamline the design process across designers and engineers for such a
-                large project, it was important to lay the foundations with a strong,
-                flexible design system that could evolve during the product’s development
-                cycle. This would inform both the aesthetics and user experience across
-                the product itself as well as the website and marketing material.
+                The system divides geographical areas into S3 cells of approximately 1.5km radius. Each cell maps to a dedicated Kafka topic for location updates. When users come online, they publish to their cell's topic. This creates an interactive grid where presence is instantly visible and queryable per cell, enabling scalable real-time tracking across entire cities.
               </ProjectSectionText>
             </ProjectTextRow>
           </ProjectSectionContent>
         </ProjectSection>
         <ProjectSection>
           <ProjectSectionContent>
-            <Image
+          { /*  <Image
               raised
               key={theme}
               srcSet={
@@ -201,16 +197,13 @@ export const SmartSparrow = () => {
                   ? imageSprDesignSystemDarkPlaceholder
                   : imageSprDesignSystemLightPlaceholder
               }
-              alt="The homepage of the aero design system docs website linking to principles and components."
+              alt="Spring Boot REST API documentation for producing and consuming location events"
               sizes="100vw"
-            />
+            /> */ }
             <ProjectTextRow>
-              <ProjectSectionHeading>Design system docs</ProjectSectionHeading>
+              <ProjectSectionHeading>REST API for universal access</ProjectSectionHeading>
               <ProjectSectionText>
-                A design system is useless if no one knows how to use it, so we put
-                together a comprehensive documentation website to cover principles, ux,
-                accessibility, and component guidelines for designers and engineers
-                working with the system.
+                A Spring Boot REST API exposes endpoints for producing and consuming location updates. Mobile apps, web clients, or backend services can call these APIs to publish their location or query who's active in any cell. This design makes the system accessible from anywhere, enabling flexible integration with various platforms and use cases.
               </ProjectSectionText>
             </ProjectTextRow>
           </ProjectSectionContent>
@@ -224,7 +217,7 @@ export const SmartSparrow = () => {
                 width={1280}
                 height={900}
                 placeholder={imageSprBackgroundVolcanismPlaceholder}
-                alt="A dramatic ocean scene with lava forming a new land mass."
+                alt="Interactive grid visualization of location cells"
                 sizes="100vw"
               />
             }
@@ -232,12 +225,9 @@ export const SmartSparrow = () => {
             <ProjectSectionColumns width="full">
               <ProjectSectionContent width="full">
                 <ProjectTextRow width="s">
-                  <ProjectSectionHeading>Motion design</ProjectSectionHeading>
+                  <ProjectSectionHeading>Live location streaming</ProjectSectionHeading>
                   <ProjectSectionText>
-                    Animation was a core principle in making the authoring experience a
-                    more understandable process. Elements animate in ways that indicate
-                    the cause and effect of each interaction to improve the fluidity of
-                    the overall experience.
+                    Location updates flow through Kafka topics in real-time. As users move between cells, their presence updates instantly. The system handles high-frequency location events efficiently, providing immediate visibility into user distribution across the grid for applications like ride-sharing and delivery services.
                   </ProjectSectionText>
                 </ProjectTextRow>
               </ProjectSectionContent>
@@ -248,7 +238,7 @@ export const SmartSparrow = () => {
                 width={1280}
                 height={800}
                 placeholder={videoSprMotionPlaceholder}
-                alt="A learning designer building and deploying an interactive lesson on volcanism using the app."
+                alt="Live demonstration of the geo tracking system with drivers updating locations"
                 sizes={`(max-width: ${media.mobile}px) 100vw, 50vw`}
               />
             </ProjectSectionColumns>
@@ -257,16 +247,12 @@ export const SmartSparrow = () => {
         <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow>
-              <ProjectSectionHeading>Encouraging adaptivity</ProjectSectionHeading>
+              <ProjectSectionHeading>Scalability and cell distribution</ProjectSectionHeading>
               <ProjectSectionText>
-                A major part of solving for collaboration was being able to visualize the
-                learner experience in the editor. This was especially beneficial for
-                subject matter experts and instructors need to review and give feedback on
-                the higher level structure without having to dig through all of the
-                adaptivity scenarios screen by screen.
+                The cell-based architecture scales horizontally by distributing load across Kafka partitions. Each cell operates independently, handling location events for its region. This design supports thousands of concurrent users while maintaining low latency. The system adapts to varying user density, ensuring consistent performance across different areas of the city.
               </ProjectSectionText>
             </ProjectTextRow>
-            <Image
+          { /*  <Image
               raised
               key={theme}
               srcSet={
@@ -281,24 +267,20 @@ export const SmartSparrow = () => {
                   ? imageSprStoryboarderDarkPlaceholder
                   : imageSprStoryboarderLightPlaceholder
               }
-              alt="A drag and drop storyboard style editor for creating an adaptive lesson."
+              alt="System monitoring dashboard showing cell-wise load distribution"
               sizes={`(max-width: ${media.mobile}px) 100vw, 80vw`}
-            />
+            /> */ }
           </ProjectSectionContent>
         </ProjectSection>
-        <ProjectSection>
+       { /* <ProjectSection>
           <ProjectSectionColumns>
             <ProjectSectionContent>
               <ProjectTextRow>
                 <ProjectSectionHeading>
-                  An extensible plugin ecosystem usable by everyone
+                  Extensible integration ecosystem
                 </ProjectSectionHeading>
                 <ProjectSectionText>
-                  The most powerful aspect of the platform is the ability to create custom
-                  plugins for any content, whether it be a degree, course, lesson, screen,
-                  or interactive component. Out of the box these can be made configurable
-                  with minimal effort from developers. Learning designers can then edit
-                  everything using a common configuration interface.
+                  The microservice provides a foundation for location-based applications. Developers can build features like proximity matching, geofencing, and fleet management on top of the Kafka topics and REST APIs. The system integrates seamlessly with analytics platforms, dashboards, and third-party services for custom use cases.
                 </ProjectSectionText>
               </ProjectTextRow>
             </ProjectSectionContent>
@@ -317,7 +299,7 @@ export const SmartSparrow = () => {
                     ? imageSprSchema2DarkPlaceholder
                     : imageSprSchema2LightPlaceholder
                 }
-                alt="Configuration options for a component."
+                alt="API endpoint configuration for cell queries"
                 sizes={`(max-width: ${media.mobile}px) 50vw, 25vw`}
               />
               <Image
@@ -325,8 +307,7 @@ export const SmartSparrow = () => {
                 srcSet={
                   isDark
                     ? `${imageSprSchema1Dark} 260w, ${imageSprSchema1DarkLarge} 520w`
-                    : `${imageSprSchema1Light} 260w, ${imageSprSchema1LightLarge} 520w`
-                }
+                    : `${imageSprSchema1Light} 260w, ${imageSprSchema1LightLarge} 520w`}
                 width={260}
                 height={660}
                 placeholder={
@@ -334,12 +315,12 @@ export const SmartSparrow = () => {
                     ? imageSprSchema1DarkPlaceholder
                     : imageSprSchema1LightPlaceholder
                 }
-                alt="Configuration options for text."
+                alt="Kafka topic structure for location events"
                 sizes={`(max-width: ${media.mobile}px) 50vw, 25vw`}
               />
             </div>
           </ProjectSectionColumns>
-        </ProjectSection>
+        </ProjectSection> */ }
         <ThemeProvider theme="dark" data-invert>
           <Suspense>
             <Earth
@@ -414,12 +395,10 @@ export const SmartSparrow = () => {
                   <ProjectSectionContent>
                     <ProjectTextRow center>
                       <ProjectSectionHeading>
-                        Next-generation learning experiences
+                        City-wide location tracking at scale
                       </ProjectSectionHeading>
                       <ProjectSectionText>
-                        The flexibility of the product allowed for developers to create
-                        engaging interactive experiences as highly configurable plugins
-                        that could then be used and manipulated by learning designers.
+                        The microservice enables real-time location tracking across entire metropolitan areas. By organizing updates into geographical cells with dedicated Kafka topics, the system provides instant visibility into user presence while maintaining scalability and performance.
                       </ProjectSectionText>
                     </ProjectTextRow>
                   </ProjectSectionContent>
@@ -439,12 +418,10 @@ export const SmartSparrow = () => {
                   <ProjectSectionContent width="xl">
                     <ProjectTextRow justify="end" width="s">
                       <ProjectSectionHeading level={4} as="h3">
-                        Bringing 3D into learning
+                        Interactive grid visualization
                       </ProjectSectionHeading>
                       <ProjectSectionText>
-                        One really cool example is the 3D screen plugin. Learning
-                        designers can load any model into it and then configure camera
-                        positions to animate to for each section.
+                        The grid displays live location updates as they happen. Users can see active drivers and participants in each cell, with markers updating in real-time as people move across the city. This creates an intuitive view of activity distribution.
                       </ProjectSectionText>
                     </ProjectTextRow>
                   </ProjectSectionContent>
@@ -467,12 +444,10 @@ export const SmartSparrow = () => {
                   <ProjectSectionContent width="xl">
                     <ProjectTextRow justify="start" width="s">
                       <ProjectSectionHeading level={4} as="h3">
-                        Interactivity
+                        Cell-based queries
                       </ProjectSectionHeading>
                       <ProjectSectionText>
-                        Learners can then be directed to specific parts of the model and
-                        shown labels. They’re also able to click and drag to orbit around
-                        and freely explore at any time.
+                        Applications can query specific cells to find all active users within a 1.5km radius. This enables proximity features like finding nearby drivers, discovering users in your area, or matching people based on location without scanning the entire city.
                       </ProjectSectionText>
                     </ProjectTextRow>
                   </ProjectSectionContent>
@@ -501,12 +476,10 @@ export const SmartSparrow = () => {
                   <ProjectSectionContent width="xl">
                     <ProjectTextRow justify="end" width="s">
                       <ProjectSectionHeading level={4} as="h3">
-                        Animation
+                        Event streaming architecture
                       </ProjectSectionHeading>
                       <ProjectSectionText>
-                        Learning designers can pick an animation included in the model to
-                        play or loop for any section without having to use any complex
-                        animation tools.
+                        Kafka ensures reliable, ordered delivery of location events. The system can replay event history for analytics, maintain audit logs, and support multiple consumers. Each cell's topic acts as an independent event stream, enabling flexible integration patterns.
                       </ProjectSectionText>
                     </ProjectTextRow>
                   </ProjectSectionContent>
@@ -524,7 +497,7 @@ export const SmartSparrow = () => {
         <ProjectSection>
           <ProjectSectionContent>
             <ProjectTextRow center centerMobile noMargin>
-              <svg
+              {/*<svg
                 width="141"
                 height="43"
                 viewBox="0 0 141 43"
@@ -536,15 +509,10 @@ export const SmartSparrow = () => {
                   fillRule="evenodd"
                   d="M35.47 30.82c6.24-11.43 4.15-22.73-4.81-27.77C20.76-2.5 7.84.52 2.28 12.46c-3.84 8.2-2.1 22.48 6.82 27.6 8.92 5.1 20.9.81 26.37-9.23Zm-3.02-12.15c.3-2.3-.24-5.1-2-6.95l-.02-.02c-3.38-3.76-8.06-4-11.02-3.92a16.61 16.61 0 0 0-7.55 2.14c-1.68.86-3.2 2.35-3.81 3.08-.4.47-1.06 1.44-.7 2.31.29.73 1.4.68 1.81.37.22-.16.45-.37.7-.6l.72-.64c2.53-2.07 4.78-3.37 10-3.37 5.23 0 8.06 3.22 8.06 6.09 0 2.87-1.38 4.82-3.97 6.09a10.54 10.54 0 0 1-4.4 1.18c.13-2.78.2-5.41.2-5.41 0-.33.02-.65.03-.96.07-1.55.12-2.72-1.01-2.94-1.36-.27-3.86 0-3.9 1.52-.06-.23.25 12.51.31 12.77l.02.29c.03.32.15.6.35.83a1.38 1.38 0 0 0 .98.41c.28 0 .68-.05 1.09-.16.5-.15 1.02-.39 1.31-.77.15-.2.27-.38.34-.72.04-.24.13-1.72.15-2.15 2.75-.02 5.54-.53 7.67-1.8 2.68-1.62 4.29-4.04 4.64-6.67ZM18.23 32.41a2.12 2.12 0 0 1 1.69 1.99c0 .52-.22.99-.63 1.32-.35.28-.8.43-1.3.43h-.01c-.23 0-.46-.03-.69-.1-.39-.1-.7-.29-.9-.52-.19-.22-.31-.5-.37-.83-.08-.5.05-1.04.36-1.48a1.9 1.9 0 0 1 1.53-.84c.1 0 .22 0 .32.03Z"
                 />
-              </svg>
+              </svg> */ }
               <ProjectSectionHeading>Project outcomes</ProjectSectionHeading>
               <ProjectSectionText>
-                Ultimately the project was successful after Smart Sparrow and the aero
-                platform were{' '}
-                <Link href="https://www.prnewswire.com/news-releases/pearson-acquires-interactive-learning-technology-from-smart-sparrow-300987673.html">
-                  acquired by Pearson in 2020
-                </Link>{' '}
-                to become a foundation for their next generation learning platform.
+                The geo tracking microservice successfully enables real-time location-based applications at scale. The cell-based architecture with Kafka topics provides efficient data distribution while maintaining low latency. The Spring REST API makes the system accessible to any client platform, from mobile apps to web dashboards. This foundation supports diverse use cases including ride-sharing, delivery tracking, fleet management, and proximity-based social features.
               </ProjectSectionText>
             </ProjectTextRow>
           </ProjectSectionContent>

@@ -6,8 +6,8 @@
 
   .highlight {
     fill: var(--accent);
-    opacity: 0;
-    transform: scale3d(1, 0, 1);
+    opacity: 1; /* fully visible */
+    transform: scale3d(1, 1, 1); /* full scale */
     transform-origin: top;
     transition: opacity 0.1s ease var(--durationM);
 
@@ -16,6 +16,7 @@
         opacity 0.1s ease var(--durationM);
     }
 
+    /* Hover styles kept for smooth animation effects */
     :is(a:hover, .monogram:hover) & {
       opacity: 1;
       transform: scale3d(1, 1, 1);

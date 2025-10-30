@@ -4,9 +4,9 @@ import gamestackTexture2 from '~/assets/trider-home.png';
 import gamestackTextureLarge from '~/assets/trider-book.png';
 import gamestackTexturePlaceholder from '~/assets/gamestack-login-placeholder.jpg';
 import gamestackTexture from '~/assets/trider-book.png';
-import sliceTextureLarge from '~/assets/slice-app-large.jpg';
+import sliceTextureLarge from '~/assets/leetcode.png';
 import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
-import sliceTexture from '~/assets/slice-app.jpg';
+import sliceTexture from '~/assets/leetcode.png';
 import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
 import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
 import sprTexture from '~/assets/geotracking_microservice.png';
@@ -126,8 +126,8 @@ export const Home = () => {
         index={2}
         title="Trider Rideshare app clone"
         description="Design and development for a Ride share app built in Kotlin using Jetpack compose and Material UI and MVVM architucture"
-        buttonText="View website"
-        buttonLink="https://gamestack.hamishw.com"
+        buttonText="View Git Source Code"
+        buttonLink="https://github.com/vignaan5/Trider"
         model={{
           type: 'phone',
           alt: 'App login screen',
@@ -148,10 +148,10 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Biomedical image collaboration"
-        description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
-        buttonText="View project"
-        buttonLink="/projects/slice"
+        title="Leetcode Hobbyist"
+        description="I love to explore computer science related stuff online"
+        buttonText="View Leetcode profile"
+        buttonLink="https://leetcode.com/u/Gyaanu/"
         model={{
           type: 'laptop',
           alt: 'Annotating a biomedical image in the Slice app',
