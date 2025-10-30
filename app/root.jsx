@@ -88,7 +88,7 @@ export default function App() {
 
   function toggleTheme(newTheme) {
     fetcher.submit(
-      { theme: newTheme ? newTheme : theme === 'light' ? 'dark' : 'light' },
+      { theme: newTheme ? newTheme : theme === 'dark' ? 'light' : 'dark' },
       { action: '/api/set-theme', method: 'post' }
     );
   }
