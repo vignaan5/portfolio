@@ -3,7 +3,7 @@ import { addons } from '@storybook/addons';
 
 addons.setConfig({
   theme: {
-    ...themes.dark,
+    ...themes.light,
     brandImage: './icon.svg',
     brandTitle: 'Hamish Williams Components',
     brandUrl: 'https://hamishw.com',
