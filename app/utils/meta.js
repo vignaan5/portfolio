@@ -1,7 +1,7 @@
 import config from '~/config.json';
 
 const { name, url, twitter } = config;
-const defaultOgImage = `${url}/social-image.png`;
+const defaultOgImage = `https://www.edexacademy.us/static/media/vignaan2.9a39b7cb59959dcc1997.png`;
 
 export function baseMeta({
   title,
